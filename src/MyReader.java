@@ -44,11 +44,11 @@ class MyReader {
     private void addWord(String word) {                                                                                 //Отдельный метод для добавления слова в коллекцию
         Integer count;
         if(!word.equals("")) {                                                                                          //Если слово не пустое то мы пытаемся добавляем слово в коллекцию увеличивая count
-            count = words.get(word);
+            count = words.get(word.toLowerCase());
             if (count == null) {
                 count = 0;
             }
-            words.put(word, ++count);
+            words.put(word.toLowerCase(), ++count);
         }                                                                                                               //Если слово пустое то значит встретились два символа(не буквы) друг за другом
     }
 
@@ -59,7 +59,7 @@ class MyReader {
     }
 
     void printOnScreen() {                                                                                              //Этим методом выводим на экран ответ домашнего задания
-        System.out.println("Все слова в файле с кол-вом повторений: ");
+        System.out.println("Кол-во повторений каждого слова в файле: ");
         writeOnScreen(words);                                                                                           //Выводим список всех слов
         System.out.println();
         System.out.println("Слова которые повторяются чаще всего");

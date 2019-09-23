@@ -17,16 +17,14 @@ public class Main {
             pathFile = scanner.nextLine();
             System.out.println();
 
-            if (pathFile.equals("")) {                                                                                  //Прерываем цикл и выходим из программы если ничего не введено
-                break;
-            }
-
             file = new File(pathFile);
             if (file.exists() && file.isFile()) {                                                                       //Проверяем существует ли этот файл и является ли он файлом, а не директорией
                 reader = new MyReader(file);
                 reader.printOnScreen();
+                break;
             } else {
                 System.out.println("Такого файла не существует " + file);
+                System.out.println("Введите другой файл");
                 System.out.println();
             }
         }
