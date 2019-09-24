@@ -36,6 +36,7 @@ class MyReader {
                 }
                 symbol = reader.read();                                                                                 //читаем следующий символ
             }
+            addWord(word.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
